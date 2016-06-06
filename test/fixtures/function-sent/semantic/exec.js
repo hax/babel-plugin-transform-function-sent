@@ -1,9 +1,9 @@
-const it = g()
+const it = g1()
 it.next(1)
 it.next(2)
 it.next(3)
 
-function* g() {
+function* g1() {
 	assert(function.sent === 1)
 	const x = yield
 	assert(x === 2)
@@ -14,17 +14,9 @@ function* g() {
 }
 
 
-// const it1 = g1()
-// it1.next(1)
-// it1.next(2)
-// it1.next(3)
-// // assert(it1.next(4) === 3)
-// // it1.next(1)
-// // it1.next(2)
-// // it1.next(3)
-//
-function* g1() {
-	yield* g()
-	// assert(yield function.sent === 4)
-	// yield* g()
+const r = Math.random()
+assert(g2().next(r).value === r)
+
+function* g2() {
+	yield function.sent
 }
