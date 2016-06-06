@@ -19,3 +19,39 @@ for similar discussion and result plugin [transform-es2015-generator-return](htt
 
 If you are one of them, this plugin is for you.
 
+
+## Installation
+```sh
+npm install babel-plugin-transform-function-sent
+```
+
+## Usage
+
+### Via `.babelrc` (Recommended)
+#### .babelrc
+```json
+{
+	"plugins": ["transform-function-sent"]
+}
+```
+
+### Via CLI
+```sh
+babel --plugins transform-function-sent
+```
+
+### Via Node API
+```js
+require("babel-core").transform("code", {
+  plugins: ["transform-function-sent"]
+})
+```
+
+### Use with `transform-es2015-function-name`
+**NOTE:*** Please put `transform-es2015-function-name` before this plugin.
+Sample:
+```json
+{
+	"plugins": ["transform-es2015-function-name", "transform-function-sent"]
+}
+```
