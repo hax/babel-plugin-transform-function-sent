@@ -1,6 +1,6 @@
 # babel-plugin-transform-function-sent
 
-Patch function.sent
+Patch [function.sent meta property](https://github.com/allenwb/ESideas/blob/master/Generator%20metaproperty.md)
 
 
 [![npm version](https://badge.fury.io/js/babel-plugin-transform-function-sent.svg)](https://badge.fury.io/js/babel-plugin-transform-function-sent)
@@ -11,13 +11,15 @@ Patch function.sent
 
 ## Why this plugin
 
-transform-regenerator support function.sent. But many people avoid use it,
-because all JavaScript engines already support ES2015 generators natively,
-and major browsers / node 0.12+ already ship generators for years.
+The official transform-regenerator plugin already support `function.sent`, but
+require generators to be transformed. Many people avoid use regenerator,
+because all JavaScript engines already support ES2015 generators natively, and
+major browsers / node 0.12+ already ship generators for years.
 (See also https://github.com/alekseykulikov/babel-preset-es2015-node5/issues/3
 for similar discussion and result plugin [transform-es2015-generator-return](https://github.com/hax/babel-plugin-transform-es2015-generator-return))
 
-If you are one of them, this plugin is for you.
+If you are one of them, this plugin is for you. It only patch `function.sent`,
+and will not touch other parts of your source code.
 
 
 ## Installation
@@ -48,7 +50,7 @@ require("babel-core").transform("code", {
 ```
 
 ### Use with `transform-es2015-function-name`
-**NOTE:*** Please put `transform-es2015-function-name` before this plugin.
+**NOTE:** Please put `transform-es2015-function-name` before this plugin.
 Sample:
 ```json
 {
