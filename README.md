@@ -1,3 +1,6 @@
+**IMPORTANT NOTE: This repo is retired since August 2017, because upcoming Babel 7.0 will officially support `function.sent` use the similar tranformation as this repo. The npm package has already transfered to Babel org.**
+---
+
 # babel-plugin-transform-function-sent
 
 Patch [function.sent meta property](https://github.com/allenwb/ESideas/blob/master/Generator%20metaproperty.md)
